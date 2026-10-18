@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Seramik Kupa",
+    "category": "Yaşam",
+    "price": 249,
+    "image": "assets/images/kupa.png",
+    "description": "Seramik Kupa, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Kablosuz Kulaklık",
+    "category": "Teknoloji",
+    "price": 1499,
+    "image": "assets/images/kulaklik.png",
+    "description": "Kablosuz Kulaklık, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.6
+  },
+  {
+    "id": 3,
+    "name": "Kanvas Sırt Çantası",
+    "category": "Aksesuar",
+    "price": 899,
+    "image": "assets/images/canta.png",
+    "description": "Kanvas Sırt Çantası, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "name": "Masa Lambası",
+    "category": "Yaşam",
+    "price": 749,
+    "image": "assets/images/lamba.png",
+    "description": "Masa Lambası, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.5
+  },
+  {
+    "id": 5,
+    "name": "Akıllı Saat",
+    "category": "Teknoloji",
+    "price": 1899,
+    "image": "assets/images/saat.png",
+    "description": "Akıllı Saat, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "name": "Deri Not Defteri",
+    "category": "Kırtasiye",
+    "price": 329,
+    "image": "assets/images/defter.png",
+    "description": "Deri Not Defteri, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.7
+  },
+  {
+    "id": 7,
+    "name": "Termos Şişe",
+    "category": "Aksesuar",
+    "price": 599,
+    "image": "assets/images/termos.png",
+    "description": "Termos Şişe, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.5
+  },
+  {
+    "id": 8,
+    "name": "Kalem Seti",
+    "category": "Kırtasiye",
+    "price": 189,
+    "image": "assets/images/kalem.png",
+    "description": "Kalem Seti, günlük hayatına işlev ve sade bir tasarım katmak için seçildi. Özenli detayları ve kullanışlı yapısıyla her gün yanında.",
+    "rating": 4.6
+  }
+]
