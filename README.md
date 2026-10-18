@@ -8,7 +8,7 @@ Flutter ile geliştirilmiş, Türkçe arayüzlü ve çevrimdışı çalışan e�
 - Dart **3.13.3**
 - Material 3
 - Uygulama bağımlılığı: yalnızca Flutter SDK. Harici paket kullanılmaz.
-- Test bağımlılığı: Flutter SDK içindeki `flutter_test`.
+- Test bağımlılıkları: Flutter SDK içindeki `flutter_test` ve `integration_test`; uygulamaya harici çalışma zamanı paketi eklenmez.
 - Android, iOS ve web platform klasörleri dahildir.
 
 ## Çalıştırma
@@ -36,6 +36,8 @@ Doğrulama ve derleme:
 dart format lib test
 flutter analyze
 flutter test
+# Android cihaz/emülatör üzerinde uçtan uca test:
+flutter drive --no-dds --driver=test_driver/integration_test.dart --target=integration_test/catalog_flow_test.dart -d emulator-5554
 flutter build web --release
 flutter build apk --debug
 # macOS + iOS araçları kuruluysa:
@@ -77,6 +79,8 @@ assets/
   images/                      # Projeye özel yerel illüstrasyonlar
 screenshots/                   # Çalışan uygulamadan ekran görüntüleri
 test/widget_test.dart          # Veri, sepet ve kullanıcı akışı testleri
+integration_test/              # Android cihaz üzerinde kullanıcı akışı
+test_driver/                   # Cihaz testinin ekran görüntüsü kaydı
 ```
 
 ## Veri ve eğitim kapsamı
@@ -87,15 +91,15 @@ Sepet yalnızca uygulama çalışırken bellekte tutulur; uygulama yeniden başl
 
 ## Ekran görüntüleri
 
-Görüntüler Flutter'ın çalışan web sürümünden, 390 × 844 mobil görünümde alınmıştır; Android/iOS cihaz görüntüsü olarak sunulmamaktadır.
+Aşağıdaki görüntüler Android 15 (API 35), ARM64 Pixel 7 profilli emülatörde çalışan uygulamadan alınmıştır. Ayrıntılı cihaz test adımları ve sonuçları: [Android doğrulama raporu](docs/ANDROID_DOGRULAMA.md).
 
 | Ana sayfa | Katalog |
 | --- | --- |
-| ![Ana sayfa](screenshots/00-ana-sayfa.png) | ![Katalog](screenshots/01-katalog.png) |
+| ![Ana sayfa](screenshots/android/android-01-ana-sayfa.png) | ![Katalog](screenshots/android/android-02-katalog.png) |
 
 | Ürün detayı | Sepet |
 | --- | --- |
-| ![Ürün detayı](screenshots/02-urun-detayi.png) | ![Sepet](screenshots/03-sepet.png) |
+| ![Ürün detayı](screenshots/android/android-03-urun-detayi.png) | ![Sepet](screenshots/android/android-04-sepet.png) |
 
 ## Doğrulama durumu
 
@@ -103,10 +107,12 @@ Görüntüler Flutter'ın çalışan web sürümünden, 390 × 844 mobil görün
 - `flutter test`: 4 test geçti (JSON/model dönüşümü, sepet hesapları, arama/filtre, ana sayfa–detay–sepet akışı).
 - `flutter build web --release`: başarılı.
 - Chrome'da mobil görünüm ve ürün/sepet etkileşimleri kontrol edildi.
-- Bu bilgisayarda Android SDK ve iOS simülatör çalışma zamanı eksik olduğu için Android APK ve iOS cihaz çalışması doğrulanmadı. Platform kaynakları projeye dahildir.
+- Android uygulama APK derlemesi başarılı; Android 15 emülatöründe uçtan uca kullanıcı akışı testi geçti.
+- iOS cihaz/simülatör doğrulaması yapılmadı.
+- `--no-dds`, bu geliştirme ortamındaki DDS snapshot sorununu aşmak için test komutunda kullanılır; uygulama işlevlerini değiştirmez.
 
 ## Teslim
 
 Proje adresi: [sevvalkasan/mini-katalog](https://github.com/sevvalkasan/mini-katalog).
 
-Kaynak kodları, README ve uygulama ekran görüntüleri repository içinde yer alır. Android/iOS cihaz doğrulaması için yukarıdaki ortam gereksinimlerini tamamlayın.
+Kaynak kodları, README ve uygulama ekran görüntüleri repository içinde yer alır. Android emülatör doğrulama raporu ve cihaz ekran görüntüleri de projeye dahildir.
